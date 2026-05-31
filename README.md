@@ -1,59 +1,205 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ShopWave — E-Commerce Store
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-stack e-commerce web application built with Laravel 12, PHP, and MySQL. Features a complete online shopping experience with product management, shopping cart, checkout system, and an admin dashboard.
 
-## About Laravel
+## 🚀 Live Demo
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> Run locally using the installation steps below.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Customer Side
+- 🏠 **Homepage** — Hero section, featured products, categories, new arrivals, and store features
+- 🛍️ **Product Listing** — Browse all products with category filter, search, and sort
+- 📦 **Product Detail** — Full product info, stock status, quantity selector, related products
+- 🛒 **Shopping Cart** — Add, update, remove items with real-time subtotal calculation
+- 💳 **Checkout** — Complete order form with COD and GCash payment options
+- ✅ **Order Confirmation** — Order summary page with order number after successful purchase
 
-## Learning Laravel
+### Admin Side
+- 🔐 **Secure Login** — Admin authentication system
+- 📊 **Dashboard** — Overview of total orders, revenue, products, and categories
+- 📦 **Order Management** — View all orders, update status (pending → processing → shipped → delivered)
+- 🛍️ **Product Management** — Add, edit, delete products with image URL, pricing, stock, and featured toggle
+- 🗂️ **Category Management** — Add, edit, delete product categories
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🛠️ Tech Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Backend:** PHP 8.2, Laravel 12
+- **Frontend:** Blade Templates, HTML, CSS, JavaScript
+- **Database:** MySQL
+- **Tools:** Composer, NPM, Vite, Git
 
-## Laravel Sponsors
+## ⚙️ Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Clone the repository**
+```bash
+   git clone https://github.com/prince793/shopwave.git
+   cd shopwave
+```
 
-### Premium Partners
+2. **Install dependencies**
+```bash
+   composer install
+   npm install && npm run build
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. **Environment setup**
+```bash
+   cp .env.example .env
+   php artisan key:generate
+```
 
-## Contributing
+4. **Configure database** in `.env`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+DB_DATABASE=shopwave
+DB_USERNAME=root
+DB_PASSWORD=
 
-## Code of Conduct
+## 🚀 Live Demo
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+> Run locally using the installation steps below.
 
-## Security Vulnerabilities
+## ✨ Features
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Customer Side
+- 🏠 **Homepage** — Hero section, featured products, categories, new arrivals, and store features
+- 🛍️ **Product Listing** — Browse all products with category filter, search, and sort
+- 📦 **Product Detail** — Full product info, stock status, quantity selector, related products
+- 🛒 **Shopping Cart** — Add, update, remove items with real-time subtotal calculation
+- 💳 **Checkout** — Complete order form with COD and GCash payment options
+- ✅ **Order Confirmation** — Order summary page with order number after successful purchase
 
-## License
+### Admin Side
+- 🔐 **Secure Login** — Admin authentication system
+- 📊 **Dashboard** — Overview of total orders, revenue, products, and categories
+- 📦 **Order Management** — View all orders, update status (pending → processing → shipped → delivered)
+- 🛍️ **Product Management** — Add, edit, delete products with image URL, pricing, stock, and featured toggle
+- 🗂️ **Category Management** — Add, edit, delete product categories
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🛠️ Tech Stack
+
+- **Backend:** PHP 8.2, Laravel 12
+- **Frontend:** Blade Templates, HTML, CSS, JavaScript
+- **Database:** MySQL
+- **Tools:** Composer, NPM, Vite, Git
+
+## ⚙️ Installation
+
+1. **Clone the repository**
+```bash
+   git clone https://github.com/prince793/shopwave.git
+   cd shopwave
+```
+
+2. **Install dependencies**
+```bash
+   composer install
+   npm install && npm run build
+```
+
+3. **Environment setup**
+```bash
+   cp .env.example .env
+   php artisan key:generate
+```
+
+4. **Configure database** in `.env`
+
+5. **Run migrations and seed data**
+```bash
+   php artisan migrate
+   php artisan db:seed
+```
+
+6. **Create admin user**
+```bash
+   php artisan tinker
+   \App\Models\User::create(['name' => 'Admin', 'email' => 'admin@shopwave.com', 'password' => bcrypt('admin123'), 'email_verified_at' => now()]);
+```
+
+7. **Start the server**
+```bash
+   php artisan serve
+```
+
+8. **Visit** `http://localhost:8000`
+
+## 👤 Admin Access
+
+- **URL:** `/admin/login`
+- **Email:** `admin@shopwave.com`
+- **Password:** `admin123`
+
+## 📁 Project Structure
+
+shopwave/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── HomeController.php
+│   │   ├── ProductController.php
+│   │   ├── CartController.php
+│   │   ├── CheckoutController.php
+│   │   └── Admin/
+│   │       ├── AdminController.php
+│   │       ├── ProductAdminController.php
+│   │       ├── OrderAdminController.php
+│   │       └── CategoryAdminController.php
+│   └── Models/
+│       ├── Product.php
+│       ├── Category.php
+│       ├── Order.php
+│       └── OrderItem.php
+├── resources/views/
+│   ├── layout.blade.php
+│   ├── home.blade.php
+│   ├── products.blade.php
+│   ├── product-detail.blade.php
+│   ├── cart.blade.php
+│   ├── checkout.blade.php
+│   ├── checkout-success.blade.php
+│   └── admin/
+│       ├── login.blade.php
+│       ├── dashboard.blade.php
+│       ├── orders/
+│       ├── products/
+│       └── categories/
+└── routes/
+└── web.php
+
+## 🗄️ Database Schema
+
+- **users** — Admin accounts
+- **categories** — Product categories
+- **products** — Store products with pricing and stock
+- **orders** — Customer orders with shipping details
+- **order_items** — Individual items per order
+
+## 📸 Screenshots
+
+### Homepage
+![Homepage](https://via.placeholder.com/800x400?text=ShopWave+Homepage)
+
+### Admin Dashboard
+![Admin Dashboard](https://via.placeholder.com/800x400?text=Admin+Dashboard)
+
+## 🗺️ Roadmap
+
+- [ ] User registration and login
+- [ ] Order history for customers
+- [ ] Product image upload
+- [ ] Payment gateway integration
+- [ ] Product reviews and ratings
+- [ ] Coupon/discount system
+
+## 👨‍💻 Developer
+
+**Prince Edrian P. Casem**
+3rd-year BSIT Student — University of Eastern Pangasinan
+📧 princeedriancasem@gmail.com
+🔗 [LinkedIn](https://linkedin.com/in/casem-princeedrian-p-9408b3294)
+🐙 [GitHub](https://github.com/prince793)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
