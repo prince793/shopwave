@@ -158,8 +158,8 @@ shopwave/
 *3rd-year BSIT Student — University of Eastern Pangasinan*
 
 * 📧 **Email:** princeedriancasem@gmail.com
-* 🔗 **LinkedIn:** [Your Profile Link Here]
-* 🐙 **GitHub:** [Your GitHub Profile Link Here]
+* 🔗 **LinkedIn: https://www.linkedin.com/in/casem-prince-edrian-p-9408b3294?utm_source=share_via&utm_content=profile&utm_medium=member_android
+
 
 ---
 
