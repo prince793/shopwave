@@ -1,138 +1,99 @@
-# ShopWave — E-Commerce Store
+# 🌊 ShopWave — E-Commerce Store
 
-A full-stack e-commerce web application built with Laravel 12, PHP, and MySQL. Features a complete online shopping experience with product management, shopping cart, checkout system, and an admin dashboard.
+[![Laravel Version](https://shields.io)](https://laravel.com)
+[![PHP Version](https://shields.io)](https://php.net)
+[![Vite](https://shields.io)](https://vite.dev)
 
-## 🚀 Live Demo
+A full-stack e-commerce platform built to simulate a complete online shopping lifecycle. Features standard consumer workflows alongside an analytical administrator management matrix.
 
-> Run locally using the installation steps below.
-
-## ✨ Features
-
-### Customer Side
-- 🏠 **Homepage** — Hero section, featured products, categories, new arrivals, and store features
-- 🛍️ **Product Listing** — Browse all products with category filter, search, and sort
-- 📦 **Product Detail** — Full product info, stock status, quantity selector, related products
-- 🛒 **Shopping Cart** — Add, update, remove items with real-time subtotal calculation
-- 💳 **Checkout** — Complete order form with COD and GCash payment options
-- ✅ **Order Confirmation** — Order summary page with order number after successful purchase
-
-### Admin Side
-- 🔐 **Secure Login** — Admin authentication system
-- 📊 **Dashboard** — Overview of total orders, revenue, products, and categories
-- 📦 **Order Management** — View all orders, update status (pending → processing → shipped → delivered)
-- 🛍️ **Product Management** — Add, edit, delete products with image URL, pricing, stock, and featured toggle
-- 🗂️ **Category Management** — Add, edit, delete product categories
-
-## 🛠️ Tech Stack
-
-- **Backend:** PHP 8.2, Laravel 12
-- **Frontend:** Blade Templates, HTML, CSS, JavaScript
-- **Database:** MySQL
-- **Tools:** Composer, NPM, Vite, Git
-
-## ⚙️ Installation
-
-1. **Clone the repository**
-```bash
-   git clone https://github.com/prince793/shopwave.git
-   cd shopwave
-```
-
-2. **Install dependencies**
-```bash
-   composer install
-   npm install && npm run build
-```
-
-3. **Environment setup**
-```bash
-   cp .env.example .env
-   php artisan key:generate
-```
-
-4. **Configure database** in `.env`
-
-DB_DATABASE=shopwave
-DB_USERNAME=root
-DB_PASSWORD=
-
-## 🚀 Live Demo
-
-> Run locally using the installation steps below.
+---
 
 ## ✨ Features
 
-### Customer Side
-- 🏠 **Homepage** — Hero section, featured products, categories, new arrivals, and store features
-- 🛍️ **Product Listing** — Browse all products with category filter, search, and sort
-- 📦 **Product Detail** — Full product info, stock status, quantity selector, related products
-- 🛒 **Shopping Cart** — Add, update, remove items with real-time subtotal calculation
-- 💳 **Checkout** — Complete order form with COD and GCash payment options
-- ✅ **Order Confirmation** — Order summary page with order number after successful purchase
+### 🛒 Customer Experience
+* **Interactive Storefront:** Dynamic hero section, multi-tier product category landing spots, and featured items module.
+* **Granular Browsing:** Fast sorting controls, dynamic keyword query searches, and targeted category filtering.
+* **State-Managed Cart:** Real-time arithmetic subtotal updates upon adding, mutating, or removing store items.
+* **Localized Checkout:** Native checkout form workflows engineered for Cash on Delivery (COD) and GCash simulations.
 
-### Admin Side
-- 🔐 **Secure Login** — Admin authentication system
-- 📊 **Dashboard** — Overview of total orders, revenue, products, and categories
-- 📦 **Order Management** — View all orders, update status (pending → processing → shipped → delivered)
-- 🛍️ **Product Management** — Add, edit, delete products with image URL, pricing, stock, and featured toggle
-- 🗂️ **Category Management** — Add, edit, delete product categories
+### 📊 Admin Infrastructure
+* **Analytical Matrix:** Centralized dashboard compiling total order volume metrics, revenue flow, and structural aggregates.
+* **Order Tracking Pipeline:** State-controlled tracking flow transitioning orders dynamically (`Pending` ➡️ `Processing` ➡️ `Shipped` ➡️ `Delivered`).
+* **Inventory Control Suite:** Complete product payload management handling image mapping assets, pricing indexes, stock variations, and promotional flags.
 
-## 🛠️ Tech Stack
+---
 
-- **Backend:** PHP 8.2, Laravel 12
-- **Frontend:** Blade Templates, HTML, CSS, JavaScript
-- **Database:** MySQL
-- **Tools:** Composer, NPM, Vite, Git
+## 🛠 Architecture & Tech Stack
 
-## ⚙️ Installation
+* **Backend Matrix:** PHP 8.2, Laravel 12 (MVC Architecture)
+* **Frontend Layer:** Blade Templates, Semantic HTML5, CSS3, JavaScript (ES6+)
+* **Database Engine:** MySQL
+* **Build System:** Vite, Composer, NPM
 
-1. **Clone the repository**
-```bash
+---
+
+## ⚙️ Installation & Infrastructure Simulation
+
+Follow these steps to spin up the application structure locally:
+
+1. **Clone the repository:**
+   ```bash
    git clone https://github.com/prince793/shopwave.git
    cd shopwave
-```
+   ```
 
-2. **Install dependencies**
-```bash
+2. **Install core ecosystems:**
+   ```bash
    composer install
    npm install && npm run build
-```
+   ```
 
-3. **Environment setup**
-```bash
+3. **Establish Environment Keys:**
+   ```bash
    cp .env.example .env
-   php artisan key:generate
-```
+   php artisan key_generate
+   ```
 
-4. **Configure database** in `.env`
+4. **Database Parameter Assignment:**
+   * Configure your local instance variables inside your `.env`:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=shopwave
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-5. **Run migrations and seed data**
-```bash
-   php artisan migrate
-   php artisan db:seed
-```
+5. **Execute Schema Migration & Seeding:**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-6. **Create admin user**
-```bash
-   php artisan tinker
-   \App\Models\User::create(['name' => 'Admin', 'email' => 'admin@shopwave.com', 'password' => bcrypt('admin123'), 'email_verified_at' => now()]);
-```
+6. **Seed Administrative User Instance:**
+   ```bash
+   php artisan tinker --execute="\App\Models\User::create(['name' => 'Admin', 'email' => 'admin@shopwave.com', 'password' => bcrypt('admin123'), 'email_verified_at' => now()]);"
+   ```
 
-7. **Start the server**
-```bash
+7. **Launch Runtime Local Server:**
+   ```bash
    php artisan serve
-```
+   ```
+   *Access the site application locally via `http://localhost:8000`*
 
-8. **Visit** `http://localhost:8000`
+---
 
-## 👤 Admin Access
+## 👤 Sandbox Identity Profile
 
-- **URL:** `/admin/login`
-- **Email:** `admin@shopwave.com`
-- **Password:** `admin123`
+* **Gateway Route:** `http://localhost:8000/admin/login`
+* **Sandbox Email:** `admin@shopwave.com`
+* **Sandbox Password:** `admin123`
 
-## 📁 Project Structure
+---
 
+## 📁 Project Directory Mapping
+
+```text
 shopwave/
 ├── app/
 │   ├── Http/Controllers/
@@ -165,41 +126,43 @@ shopwave/
 │       ├── products/
 │       └── categories/
 └── routes/
-└── web.php
+    └── web.php
+```
 
-## 🗄️ Database Schema
+---
 
-- **users** — Admin accounts
-- **categories** — Product categories
-- **products** — Store products with pricing and stock
-- **orders** — Customer orders with shipping details
-- **order_items** — Individual items per order
+## 🗄️ Entity Relationship Database Schema
 
-## 📸 Screenshots
+* `users` — Core security administrative identity profiles.
+* `categories` — Structured taxonomies organizing catalog variants.
+* `products` — Inventory metrics tracking unique unit valuations and stock quantities.
+* `orders` — Consumer fulfillment data mapped with shipping properties.
+* `order_items` — Single relational transactional break-downs tracking line items.
 
-### Homepage
-![Homepage](https://via.placeholder.com/800x400?text=ShopWave+Homepage)
+---
 
-### Admin Dashboard
-![Admin Dashboard](https://via.placeholder.com/800x400?text=Admin+Dashboard)
+## 🗺️ Engineering Development Roadmap
 
-## 🗺️ Roadmap
+- [ ] Customer account authentication engines (Signup/Login)
+- [ ] Historical user order tracking summary logs
+- [ ] Multi-part native server-side image asset uploading
+- [ ] External production sandbox Payment Gateway implementation
+- [ ] Item specific rating index scores and text reviews
+- [ ] Relational coupon code deduction logic engines
 
-- [ ] User registration and login
-- [ ] Order history for customers
-- [ ] Product image upload
-- [ ] Payment gateway integration
-- [ ] Product reviews and ratings
-- [ ] Coupon/discount system
+---
 
-## 👨‍💻 Developer
+## 👨‍💻 Developer Profile
 
-**Prince Edrian P. Casem**
-3rd-year BSIT Student — University of Eastern Pangasinan
-📧 princeedriancasem@gmail.com
-🔗 [LinkedIn](https://linkedin.com/in/casem-princeedrian-p-9408b3294)
-🐙 [GitHub](https://github.com/prince793)
+**Prince Edrian P. Casem**  
+*3rd-year BSIT Student — University of Eastern Pangasinan*
 
-## 📄 License
+* 📧 **Email:** princeedriancasem@gmail.com
+* 🔗 **LinkedIn:** [Your Profile Link Here]
+* 🐙 **GitHub:** [Your GitHub Profile Link Here]
 
-This project is open source and available under the [MIT License](LICENSE).
+---
+
+## 📄 Licensing
+
+This architecture is open-source distribution software under the [MIT License](LICENSE).
