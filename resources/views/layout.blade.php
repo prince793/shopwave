@@ -107,6 +107,20 @@
     <ul class="nav-links">
         <li><a href="{{ route('home') }}">Home</a></li>
         <li><a href="{{ route('products') }}">Products</a></li>
+
+        @auth
+        <li><a href="{{ route('profile.edit') }}" style="color:var(--blue);font-weight:500;">👤 {{ Auth::user()->name }}</a></li>
+        <li>
+            <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+                @csrf
+                <button type="submit" style="background:none;border:none;color:var(--text-muted);font-size:0.9rem;cursor:pointer;font-family:'DM Sans',sans-serif;">Logout</button>
+            </form>
+        </li>
+        @else
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('register') }}" style="background:var(--blue);color:#fff;padding:0.4rem 1rem;border-radius:8px;">Register</a></li>
+        @endauth
+
         <li>
             <a href="{{ route('cart.index') }}" class="nav-cart">
                 🛒 Cart
@@ -154,6 +168,6 @@
         <p>© 2026 ShopWave. Built with Laravel by Prince Edrian Casem.</p>
     </div>
 </footer>
-
+@stack('scripts')
 </body>
 </html>

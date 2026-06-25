@@ -148,15 +148,24 @@
                                 </label>
                             </div>
                             <div class="payment-option">
-                                <input type="radio" name="payment_method" id="gcash" value="gcash"/>
-                                <label class="payment-label" for="gcash">
-                                    <span class="payment-icon">📱</span>
-                                    <div class="payment-name">GCash</div>
-                                    <div class="payment-desc">Pay via GCash</div>
+                                <input type="radio" name="payment_method" id="paypal" value="paypal"/>
+                                <label class="payment-label" for="paypal">
+                                    <span class="payment-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" xml:space="preserve">
+                                        <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                                            <path d="M 37.046 17.998 c -1.276 0.001 -2.363 0.93 -2.562 2.19 l -4.257 27 c 0.198 -1.261 1.285 -2.19 2.562 -2.19 h 12.475 c 12.555 0 23.208 -9.159 25.155 -21.57 c 0.145 -0.927 0.227 -1.862 0.246 -2.8 c -3.191 -1.673 -6.938 -2.63 -11.045 -2.63 L 37.046 17.998 z" style="fill:rgb(0,28,100);"/>
+                                            <path d="M 70.663 20.629 c -0.019 0.938 -0.101 1.873 -0.246 2.8 c -1.947 12.411 -12.601 21.57 -25.155 21.57 H 32.789 c -1.276 0 -2.364 0.928 -2.562 2.19 l -3.914 24.811 L 23.86 87.564 c -0.183 1.148 0.6 2.227 1.748 2.41 C 25.718 89.991 25.829 90 25.94 90 h 13.54 c 1.276 -0.001 2.363 -0.93 2.562 -2.19 l 3.566 -22.621 c 0.2 -1.261 1.287 -2.19 2.564 -2.19 h 7.972 c 12.555 0 23.208 -9.159 25.155 -21.57 c 1.382 -8.809 -3.054 -16.824 -10.636 -20.799 L 70.663 20.629 z" style="fill:rgb(0,112,224);"/>
+                                            <path d="M 21.663 0 c -1.276 0 -2.364 0.928 -2.562 2.188 L 8.476 69.564 c -0.201 1.279 0.787 2.436 2.082 2.436 h 15.756 l 3.912 -24.811 l 4.257 -27 c 0.2 -1.261 1.286 -2.189 2.562 -2.19 h 22.572 c 4.108 0 7.855 0.958 11.045 2.63 C 70.882 9.329 61.558 0 48.738 0 L 21.663 0 z" style="fill:rgb(0,48,135);"/>
+                                        </g>
+                                        </svg>
+                                    </span>
+                                    <div class="payment-name">PayPal</div>
+                                    <div class="payment-desc">Pay via PayPal (Sandbox)</div>
                                 </label>
                             </div>
                         </div>
                         @error('payment_method')<div class="error">{{ $message }}</div>@enderror
+                        <div id="paypal-button-container" style="margin-top:1rem;display:none;"></div>
                     </div>
                 </div>
 
@@ -192,3 +201,43 @@
     </div>
 </section>
 @endsection
+
+@push('scripts')
+<script src="https://www.paypal.com/sdk/js?client-id=ATGpHluXkBy9QV5z2LBA4xXXJQIi8rinil87rFRwnNK-qkMg5I9lH9Rf-ThsdCs7pE8-u5o2fkUk6MQT&version=6&currency=USD"></script>
+<script>
+    var orderTotal = {{ $total }};
+
+    document.getElementById('paypal').addEventListener('change', function() {
+        document.getElementById('paypal-button-container').style.display = 'block';
+        document.querySelector('.place-order-btn').style.display = 'none';
+    });
+
+    document.getElementById('cod').addEventListener('change', function() {
+        document.getElementById('paypal-button-container').style.display = 'none';
+        document.querySelector('.place-order-btn').style.display = 'block';
+    });
+
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: { value: orderTotal.toFixed(2) }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'paypal_order_id';
+                input.value = data.orderID;
+                document.querySelector('form').appendChild(input);
+                document.querySelector('form').submit();
+            });
+        },
+        onError: function(err) {
+            alert('PayPal payment failed. Please try again.');
+        }
+    }).render('#paypal-button-container');
+</script>
+@endpush

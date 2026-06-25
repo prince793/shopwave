@@ -56,7 +56,7 @@
     </nav>
     <div class="sidebar-bottom">
         <div class="user-info">{{ Auth::user()->name }}</div>
-        <form method="POST" action="{{ route('admin.logout') }}">
+        <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit" class="logout-btn">Sign Out</button>
         </form>
