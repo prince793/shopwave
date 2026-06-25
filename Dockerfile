@@ -22,4 +22,4 @@ RUN a2enmod rewrite
 
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD bash -c "php artisan config:clear && php artisan migrate --force && apache2-foreground"
